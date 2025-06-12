@@ -38,10 +38,30 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <style>
+    .uniform-gif {
+      width: 280px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .small-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 0.5em;
+    }
+
+    .stacked {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
 </head>
 
 <body>
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -50,20 +70,19 @@
             <h1 class="title is-1 publication-title">RELOCATE: A Simple Training-Free Baseline for Visual Query Localization Using Region-Based Representations</h1>
             <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://savya08.github.io/" target="_blank">Savya Khosla</a>,
-              <a href="mailto:st34@illinois.edu" target="_blank">Sethuraman T V</a>,
-              <a href="https://alexander-schwing.de/" target="_blank">Alexander Schwing</a>,
-              <a href="https://dhoiem.cs.illinois.edu/" target="_blank">Derek Hoiem</a>
+              <a href="https://savya08.github.io/" target="_blank"><b>Savya Khosla</b></a>,
+              <a href="mailto:st34@illinois.edu" target="_blank"><b>Sethuraman T V</b></a>,
+              <a href="https://alexander-schwing.de/" target="_blank"><b>Alexander Schwing</b></a>,
+              <a href="https://dhoiem.cs.illinois.edu/" target="_blank"><b>Derek Hoiem</b></a>
             </span><br>
-            <span class="author-block" style="color: #4A90E2;">University of Illinois Urbana-Champaign</span><br>
-            <span class="author-block"><small><tt>{savyak2, st34, aschwing, dhoiem}@illinois.edu</tt></small></span>
+            <span class="author-block" style="color: #35414f;">University of Illinois Urbana-Champaign</span><br>
+            <span class="author-block"><small>{savyak2, st34, aschwing, dhoiem}@illinois.edu</small></span>
           </div>
-
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2412.01826" target="_blank"
+                  <a href="https://arxiv.org/pdf/2412.01826" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -72,19 +91,8 @@
                   </a>
                 </span>
 
-                <!-- Optional: Remove or replace if no supplementary -->
-                <!-- <span class="link-block">
-                  <a href="..." target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Supplementary</span>
-                  </a>
-                </span> -->
-
                 <span class="link-block">
-                  <a href="https://github.com/savya08/REN/tree/main" target="_blank"
+                  <a href="https://github.com/savya08/REN/tree/main/visual_query" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -101,171 +109,151 @@
     </div>
   </section>
 
-
-  <!-- Teaser image -->
+  <!-- Demo -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <img src="figures/image.png" alt="FRAME Teaser" class="center">
-        <h2 class="subtitle has-text-centered">
-          FRAME outperforms state-of-the-art self-supervised models (DINO, SiamMAE) on multiple dense video tasks. The
-          student (FRAME) surpasses the teacher (DINO) by learning to predict current and future features using memory,
-          improving temporal consistency and visual correspondence. (Right) Eg: VOS where FRAME improves segmentation of
-          horse and rider. (left) Tasks shown: VOS = Video Object Segmentation, Part Prop. = Part Propagation, Pose
-          Prop. = Pose Propagation, Seg = Semantic Segmentation of current & future frame.
-        </h2>
+      <div class="hero-body has-text-centered">
+
+        <div class="columns is-centered is-vcentered">
+          <div class="column is-narrow">
+            <div class="stacked">
+              <img src="figures/vq4.png" class="small-icon" alt="Query 1">
+              <img src="figures/ex4.gif" class="uniform-gif" alt="Example 1">
+            </div>
+          </div>
+          <div class="column is-narrow">
+            <div class="stacked">
+              <img src="figures/vq1.png" class="small-icon" alt="Query 2">
+              <img src="figures/ex1.gif" class="uniform-gif" alt="Example 2">
+            </div>
+          </div>
+          <div class="column is-narrow">
+            <div class="stacked">
+              <img src="figures/vq3.png" class="small-icon" alt="Query 3">
+              <img src="figures/ex3.gif" class="uniform-gif" alt="Example 3">
+            </div>
+          </div>
+        </div>
+  
+        <div class="columns is-centered is-vcentered">
+          <div class="column is-narrow">
+            <div class="stacked">
+              <img src="figures/vq2.png" class="small-icon" alt="Query 4">
+              <img src="figures/ex2.gif" class="uniform-gif" alt="Example 4">
+            </div>
+          </div>
+          <div class="column is-narrow">
+            <div class="stacked">
+              <img src="figures/vq5.png" class="small-icon" alt="Query 5">
+              <img src="figures/ex5.gif" class="uniform-gif" alt="Example 5">
+            </div>
+          </div>
+        </div>
+        
+        <div class="content">
+          <p>
+            RELOCATE accurately localizes query objects in long videos, even under challenging conditions such as visual clutter, 
+            occlusion, motion blur, viewpoint changes, and brief visibility. <br> The query image is shown above each clip. Ground-truth 
+            boxes are in shown green, and RELOCATE’s predictions are in red. <br> Since the query object appears only briefly, we show short 
+            video segments for illustration.
+          </p>
+        </div>
+  
       </div>
     </div>
   </section>
-
 
   <!-- Paper abstract -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <h3 class="title is-3">Abstract</h3>
           <div class="content has-text-justified">
             <p>
-              Dense video prediction tasks, such as object tracking and semantic segmentation, require video encoders
-              that generate temporally consistent, spatially dense features for every frame. However, existing
-              approaches fall short: image encoders like DINO or CLIP lack temporal awareness, while video models such
-              as VideoMAE underperform compared to image encoders on dense prediction tasks. We address this gap with
-              <strong>FRAME</strong>, a self-supervised video frame encoder tailored for dense video understanding.
-              FRAME learns to predict current and future DINO patch features from past and present RGB frames, leading
-              to spatially precise and temporally coherent representations. To our knowledge, FRAME is the first video
-              encoder to leverage image-based models for dense prediction while outperforming them on tasks requiring
-              fine-grained visual correspondence. As an auxiliary capability, FRAME aligns its class token with CLIP's
-              semantic space, supporting language-driven tasks such as video classification. We evaluate FRAME across
-              <em>six dense prediction tasks</em> on <em>seven datasets</em>, where it consistently outperforms image
-              encoders and existing self-supervised video models. Despite its versatility, FRAME maintains a compact
-              architecture suitable for a range of downstream applications.
+              We present RELOCATE, a simple <b>training-free</b> baseline designed to perform the challenging task of visual query 
+              localization in long videos. To eliminate the need for task-specific training and efficiently handle long videos, 
+              RELOCATE leverages a <b>region-based representation</b> derived from pretrained vision models. At a high level, it 
+              follows the classic object localization approach: (1) identify all objects in each video frame, (2) compare the 
+              objects with the given query and select the most similar ones, and (3) perform bidirectional tracking to get a 
+              spatio-temporal response. However, we propose some key enhancements to handle small objects, cluttered scenes, 
+              partial visibility, and varying appearances. Notably, we refine the selected objects for accurate localization and 
+              generate additional visual queries to capture visual variations. We evaluate RELOCATE on the challenging Ego4D Visual 
+              Query 2D Localization dataset, establishing a new baseline that outperforms prior task-specific methods by <b>49% 
+              (relative improvement)</b> in spatio-temporal average precision.
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End paper abstract -->
 
-  <!-- Method Overview -->
+  <!-- Method -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column">
           <h2 class="title is-3">Method Overview</h2>
-          <div class="content has-text-justified">
+          <div class="content">
             <p>
-              FRAME is trained in two stages. In Stage 1, we train a student encoder to match dense patch-level and
-              class-level features from frozen image-based teacher models (DINO and CLIP). In Stage 2, we equip the
-              student with lightweight temporal modules—a memory unit that aggregates past context and an anticipation
-              unit that predicts future features.
+              RELOCATE consists of five stages: <b>(1) Prepare</b>, <b>(2) Search</b>, <b>(3) Refine</b>, <b>(4) Track</b>, and <b>(5) Reiterate</b>.
             </p>
           </div>
-          <img src="figures/framework.png" alt="FRAME Framework" class="center">
-          <h2 class="subtitle has-text-centered">
-            Overview of FRAME Architecture and Two-Stage Training Process. 
-          </h2>
+          <img src="figures/framework.png" alt="RELOCATE Framework" class="center" style="width: 1000px;">
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Results carousel -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3 has-text-centered">Key Results</h2>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <!-- Your image here -->
-            <img src="figures/Figure_1.png" alt="Video Object Segmentation Results" />
-            <h2 class="subtitle has-text-centered">
-              Video Object Segmentation on DAVIS: FRAME provides more robust segmentation across frames.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="figures/Figure_2.png" alt="Semantic Part Propagation Results" />
-            <h2 class="subtitle has-text-centered">
-              Semantic Part Propagation on VIP: FRAME accurately tracks semantic parts over time.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="figures/Figure_3.png" alt="Pose Propagation Results" />
-            <h2 class="subtitle has-text-centered">
-              Pose Propagation on JHMDB: FRAME maintains keypoint correspondence across frames.
-            </h2>
-          </div>
-       
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End results carousel -->
 
   <!-- Main Results Table -->
-  <section class="section hero ">
+  <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Performance Comparison</h2>
+          <h2 class="title is-3">Results</h2>
           <div class="content">
-            <p>FRAME substantially outperforms existing self-supervised methods on visual correspondence tasks:</p>
-
+            <p>
+              Despite requiring no task-specific training, RELOCATE significantly outperforms specialized methods—achieving a 
+              49% relative improvement in spatio-temporal average precision on the Ego4D VQ2D challenge.
+            </p>
             <table class="table is-bordered is-striped is-narrow is-hoverable">
               <thead>
                 <tr>
                   <th>Method</th>
-                  <th>Backbone</th>
-                  <th>DAVIS (J&F)</th>
-                  <th>VIP (mIoU)</th>
-                  <th>JHMDB (PCK@0.1)</th>
+                  <th>stAP<sub>25</sub></th>
+                  <th>tAP<sub>25</sub></th>
+                  <th>Success</th>
+                  <th>Recovery</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>DINO</td>
-                  <td>ViT-S/16</td>
-                  <td>61.8</td>
-                  <td>36.2</td>
-                  <td>45.6</td>
+                  <td>SiamRCNN</td>
+                  <td>0.13</td>
+                  <td>0.21</td>
+                  <td>41.6</td>
+                  <td>34.0</td>
                 </tr>
                 <tr>
-                  <td>SiamMAE</td>
-                  <td>ViT-S/16</td>
-                  <td>62.0</td>
-                  <td>37.3</td>
-                  <td>47.0</td>
-                </tr>
-                <tr class="has-background-success-light">
-                  <td><strong>FRAME (ours)</strong></td>
-                  <td><strong>ViT-S/16</strong></td>
-                  <td><strong>65.7</strong></td>
-                  <td><strong>41.2</strong></td>
-                  <td><strong>48.7</strong></td>
+                  <td>CocoFormer</td>
+                  <td>0.18</td>
+                  <td>0.26</td>
+                  <td>48.1</td>
+                  <td>43.2</td>
                 </tr>
                 <tr>
-                  <td>DINO</td>
-                  <td>ViT-S/8</td>
-                  <td>69.9</td>
-                  <td>39.5</td>
-                  <td>56.5</td>
+                  <td>VQLoC</td>
+                  <td>0.24</td>
+                  <td>0.32</td>
+                  <td>55.9</td>
+                  <td>45.1</td>
                 </tr>
                 <tr>
-                  <td>SiamMAE</td>
-                  <td>ViT-S/8</td>
-                  <td>71.4</td>
-                  <td>45.9</td>
-                  <td>61.9</td>
-                </tr>
-                <tr class="has-background-success-light">
-                  <td><strong>FRAME (ours)</strong></td>
-                  <td><strong>ViT-S/8</strong></td>
-                  <td><strong>73.2</strong></td>
-                  <td><strong>47.9</strong></td>
-                  <td><strong>64.1</strong></td>
+                  <td><strong>RELOCATE</strong></td>
+                  <td><strong>0.35</strong></td>
+                  <td><strong>0.43</strong></td>
+                  <td><strong>60.1</strong></td>
+                  <td><strong>50.6</strong></td>
                 </tr>
               </tbody>
             </table>
@@ -275,289 +263,47 @@
     </div>
   </section>
 
-  <!-- Qualitative Results -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop ">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Qualitative Examples</h2>
-          <img src="figures/FRAME_teaser.png" alt="FRAME vs DINO Qualitative Results" style="width: 100%;">
-          <h2 class="subtitle has-text-centered">
-            Comparison of FRAME and DINO on feature propagation across video frames. FRAME demonstrates greater
-            robustness to viewpoint changes, occlusions, and object reappearances, making it a more suitable video frame
-            encoder.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Video carousel -->
-  <section class="hero is-small ">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3 has-text-centered">Video Examples</h2>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-video1 has-text-centered">
-            <video poster="" id="video1" autoplay controls muted loop  class="is-centered">
-              <source src="static/videos/demo1.mp4" type="video/mp4" >
-            </video>
-          </div>
-          <div class="item item-video2 has-text-centered">
-            <video poster="" id="video2" autoplay controls muted loop  class="is-centered">
-              <source src="static/videos/demo2.mp4" type="video/mp4" >
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End video carousel -->
-
-  <!-- DINO vs FRAME Comparison -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3 has-text-centered">DINO (Left) vs FRAME (Right) - Comparison</h2>
-        <div id="dino-frame-carousel" class="carousel results-carousel">
-          <div class="item item-video1 has-text-centered">
-            <video poster="" id="dino-frame1" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/0_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video2 has-text-centered">
-            <video poster="" id="dino-frame2" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/2_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video3 has-text-centered">
-            <video poster="" id="dino-frame3" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/11_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video4 has-text-centered">
-            <video poster="" id="dino-frame4" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/12_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video5 has-text-centered">
-            <video poster="" id="dino-frame5" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/15_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video6 has-text-centered">
-            <video poster="" id="dino-frame6" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/16_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video7 has-text-centered">
-            <video poster="" id="dino-frame7" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/19_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video8 has-text-centered">
-            <video poster="" id="dino-frame8" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/21_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video9 has-text-centered">
-            <video poster="" id="dino-frame9" autoplay controls muted loop class="is-centered">
-              <source src="static/videos/dino_vs_frame/29_html5.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End DINO vs FRAME Comparison -->
-
-  <!-- Ablation Studies -->
-  <section class="section hero is-light">
+  <!-- Video Tutorial -->
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Insights</h2>
+          <h2 class="title is-3">Video Tutorial</h2>
           <div class="content">
-
-            <table class="table is-bordered is-striped is-narrow is-hoverable">
-              <thead>
-                <tr>
-                  <th>Memory</th>
-                  <th>Anticipation</th>
-                  <th>Stages</th>
-                  <th>Data</th>
-                  <th>DAVIS (J&F)</th>
-                  <th>VIP (mIoU)</th>
-                  <th>JHMDB (PCK)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>✗</td>
-                  <td>✗</td>
-                  <td>Stage 1</td>
-                  <td>Kinetics</td>
-                  <td>62.1</td>
-                  <td>39.0</td>
-                  <td>46.6</td>
-                </tr>
-                <tr>
-                  <td>✓</td>
-                  <td>✓</td>
-                  <td>2-Stage</td>
-                  <td>Kinetics</td>
-                  <td>65.7</td>
-                  <td>41.2</td>
-                  <td>48.7</td>
-                </tr>
-                <tr>
-                  <td>✓</td>
-                  <td>✗</td>
-                  <td>2-Stage</td>
-                  <td>Kin.+Ego4D</td>
-                  <td>65.5</td>
-                  <td>41.2</td>
-                  <td>48.6</td>
-                </tr>
-                <tr class="has-background-success-light">
-                  <td><strong>✓</strong></td>
-                  <td><strong>✓</strong></td>
-                  <td><strong>2-Stage</strong></td>
-                  <td><strong>Kin.+Ego4D</strong></td>
-                  <td><strong>66.3</strong></td>
-                  <td><strong>42.0</strong></td>
-                  <td><strong>49.0</strong></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p>Both memory and anticipation components contribute significantly to performance, with the two-stage
-              training providing the best results.</p>
+            <video class="center" width="100%" controls>
+              <source src="figures/tutorial.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- Semantic Segmentation Results -->
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Semantic Segmentation and Anticipation</h2>
-        <div class="content">
-          <div class="columns">
-            <div class="column is-7">
-              <img src="figures/step_anticipation.png" alt="Semantic segmentation on current and future frames" class="center">
-              <p class="has-text-centered"><strong>Semantic segmentation on current and future frames.</strong> </p>
-            </div>
-            <div class="column is-5">
-              <table class="table is-bordered is-striped is-narrow">
-                <thead>
-                  <tr>
-                    <th>Model</th>
-                    <th>CamVid Current</th>
-                    <th>CamVid Future</th>
-                    <th>VSPW Current</th>
-                    <th>VSPW Future</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>DINO ViT-S/16</td>
-                    <td>60.1</td>
-                    <td>50.2</td>
-                    <td>36.4</td>
-                    <td>25.6</td>
-                  </tr>
-                  <tr class="has-background-success-light">
-                    <td><strong>FRAME ViT-S/16</strong></td>
-                    <td><strong>62.8</strong></td>
-                    <td><strong>53.9</strong></td>
-                    <td><strong>38.9</strong></td>
-                    <td><strong>28.3</strong></td>
-                  </tr>
-                  <tr>
-                    <td>DINO ViT-S/8</td>
-                    <td>59.6</td>
-                    <td>51.1</td>
-                    <td>35.9</td>
-                    <td>25.8</td>
-                  </tr>
-                  <tr class="has-background-success-light">
-                    <td><strong>FRAME ViT-S/8</strong></td>
-                    <td><strong>62.6</strong></td>
-                    <td><strong>54.0</strong></td>
-                    <td><strong>38.0</strong></td>
-                    <td><strong>27.4</strong></td>
-                  </tr>
-                  <tr>
-                    <td>DINOv2 ViT-L/14</td>
-                    <td>68.3</td>
-                    <td>56.1</td>
-                    <td>41.8</td>
-                    <td>30.3</td>
-                  </tr>
-                  <tr class="has-background-success-light">
-                    <td><strong>FRAME ViT-L/14</strong></td>
-                    <td><strong>69.8</strong></td>
-                    <td><strong>59.2</strong></td>
-                    <td><strong>44.0</strong></td>
-                    <td><strong>33.8</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-  <!-- Comparison of Performance vs Parameters -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Performance vs Parameters</h2>
-          <div class="content">
-            <img src="figures/performance_chart_1.png" alt="FRAME outperforms DINO with fewer parameters." class="center">
-            <p class="has-text-centered"><strong>FRAME outperforms DINO with fewer parameters.</strong> </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </section>    
 
-  <!--BibTex citation -->
-  <!-- <section class="section" id="BibTeX">
+  <!-- BibTex citation -->
+  <section class="section" id="BibTeX">
     <div class="container is-max-desktop content is-dark">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@article{frame2025,
-  title={FRAME: Feature Representation and Anticipation with Memory},
-  author={Anonymous Authors},
-  journal={Neural Information Processing Systems},
-  year={2025}
+      <h2 class="title is-3">BibTex</h2>
+      <pre><code>@inproceedings{khosla2025relocate,
+    title={RELOCATE: A Simple Training-Free Baseline for Visual Query Localization Using Region-Based Representations},
+    author={Savya Khosla and Sethuraman T V and Alexander Schwing and Derek Hoiem},
+    journal={Computer Vision and Pattern Recognition},
+    year={2025}
 }</code></pre>
     </div>
-  </section> -->
-  <!--End BibTex citation -->
-
+  </section>
 </body>
-
-
 
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
