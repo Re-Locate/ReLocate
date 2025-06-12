@@ -3,30 +3,25 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
   <meta name="description"
-    content="FRAME: Feature Representation and Anticipation with Memory - A self-supervised video frame encoder for dense video understanding">
+    content="RELOCATE: A Simple Training-Free Baseline for Visual Query Localization Using Region-Based Representations.">
   <meta property="og:title" content="RELOCATE: A Simple Training-Free Baseline for Visual Query Localization Using Region-Based Representations" />
   <meta property="og:description"
-    content="A self-supervised video frame encoder that learns temporally consistent, spatially dense features for dense video prediction tasks" />
-  <meta property="og:url" content="" />
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    content="A simple training-free baseline for visual query localization using region-based representations.">
+  <meta property="og:url" content="https://arxiv.org/abs/2412.01826" />
   <meta property="og:image" content="static/images/FRAME_teaser.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:title" content="RELOCATE: A Simple Training-Free Baseline for Visual Query Localization Using Region-Based Representations">
-  <meta name="twitter:description" content="A self-supervised video frame encoder for dense video understanding">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:description" content="A simple training-free baseline for visual query localization using region-based representations.">
   <meta name="twitter:image" content="static/images/FRAME_teaser.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords"
-    content="computer vision, video understanding, self-supervised learning, dense prediction, video segmentation">
+    content="computer vision, visual query localization, region-based representations, zero-shot localization">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>FRAME: Feature Representation and Anticipation with Memory</title>
+  <title>RELOCATE: A Simple Training-Free Baseline for Visual Query Localization</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -52,44 +47,18 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">FRAME: Feature Representation and Anticipation with Memory</h1>
+            <h1 class="title is-1 publication-title">RELOCATE: A Simple Training-Free Baseline for Visual Query Localization Using Region-Based Representations</h1>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="mailto:st34@illinois.edu" target="_blank">Sethuraman T V</a><sup>1,2</sup>,</span>
-              <span class="author-block">
-                <a href="https://savya08.github.io/" target="_blank">Savya Khosla</a><sup>2</sup>,</span>
-              <span class="author-block">
-                <a href="https://trevahok.github.io" target="_blank">Vignesh Srinivasakumar</a><sup>2†</sup>,</span>
-              <span class="author-block">
-                <a href="https://gabriel-huang.github.io/" target="_blank">Jiahui Huang</a><sup>1</sup>,</span>
-              <span class="author-block">
-                <a href="https://sites.google.com/view/seoungwugoh/" target="_blank">Seoung Wug Oh</a><sup>1</sup>,</span>
-              <span class="author-block">
-                <a href="https://sjenni.github.io/" target="_blank">Simon Jenni</a><sup>1</sup>,</span>
-              <span class="author-block">
-                <a href="https://dhoiem.cs.illinois.edu/" target="_blank">Derek Hoiem</a><sup>2*</sup>,</span>
-              <span class="author-block">
-                <a href="https://joonyoung-cv.github.io/" target="_blank">Joon-Young Lee</a><sup>1*</sup>
-              </span>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <span style="color: #FF0000;">Adobe Research</span><sup>1</sup>,
-                <span style="color: #13294B;">University of Illinois Urbana-Champaign</span><sup>2</sup><br>
-              </span>
-              <span class="eql-cntrb">
-                <small><br><sup>*</sup>Equal advising, <sup>†</sup>Now at <span
-                    style="color: #76B900;">NVIDIA</span></small>
-              </span>
+              <span class="author-block">Savya Khosla, Sethuraman T V, Alexander Schwing, Derek Hoiem</span><br>
+              <span class="author-block" style="color: #13294B;">University of Illinois Urbana-Champaign</span><br>
+              <span class="author-block"><small><tt>{savyak2, st34, aschwing, dhoiem}@illinois.edu</tt></small></span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
-                <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="neurips_2025.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2412.01826" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -97,24 +66,24 @@
                   </a>
                 </span>
 
-                <!-- Supplementary PDF link -->
-                <span class="link-block">
-                  <a href="23370_FRAME_Pre_Training_Video_Supplementary Material.zip" target="_blank"
+                <!-- Optional: Remove or replace if no supplementary -->
+                <!-- <span class="link-block">
+                  <a href="..." target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Supplementary</span>
                   </a>
-                </span>
+                </span> -->
 
-                <!-- Github link -->
                 <span class="link-block">
-                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/savya08/REN/tree/main" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code (Coming Soon)</span>
+                    <span>Code</span>
                   </a>
                 </span>
 
@@ -125,6 +94,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- Teaser image -->
   <section class="hero teaser">
